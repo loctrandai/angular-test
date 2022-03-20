@@ -1,0 +1,44 @@
+
+<div fxFlex fxFill fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="start start">
+  <h1>Tasks managing application</h1>
+  <a routerLink="detail">Add New</a>
+
+  <div fxLayout="row" [formGroup]="form" fxLayoutGap="20px">
+
+    <label fxLayout="column">
+      <span class="label">Search name:</span>
+      <input type="text" formControlName="search">
+    </label>
+
+    <label fxLayout="column">
+      <span class="label">Process:</span>
+      <select formControlName="process">
+        <option value="">Please select</option>
+        <option value="open">Open</option>
+        <option value="inprocess">Inprocess</option>
+        <option value="complete">Complete</option>
+        <option value="invalid">Invalid</option>
+      </select>
+    </label>
+  </div>
+
+  <table border="1">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Assinger</th>
+      <th>Process</th>
+    </tr>
+
+    <ng-container *ngFor="let row of dataSource">
+      <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.description}}</td>
+        <td>{{row.assigner}}</td>
+        <td>{{row.process}}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

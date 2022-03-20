@@ -1,0 +1,41 @@
+<div fxFlex fxFill fxLayout="column" fxLayoutAlign="start start">
+  <h2>Add New Task</h2>
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px" [formGroup]="form">
+    <a routerLink="">Back</a>
+    <div fxLayout="row">
+      <label fxLayout="row">
+        <span class="label">Task Name(*):</span>
+        <input type="text" formControlName="name" required>
+      </label>
+    </div>
+    <div fxLayout="row">
+      <label fxLayout="row">
+        <span class="label">Description:</span>
+        <textarea type="text" formControlName="description"></textarea>
+      </label>
+    </div>
+
+    <div fxLayout="row">
+      <label fxLayout="row">
+        <span class="label">Assigner(*):</span>
+        <input type="text" formControlName="assigner" required>
+      </label>
+    </div>
+    <div fxLayout="row">
+      <label fxLayout="row">
+        <span class="label">Process(*):</span>
+        <select formControlName="process" required>
+          <option value="">Please select</option>
+          <option value="open">Open</option>
+          <option value="inprocess">Inprocess</option>
+          <option value="complete">Complete</option>
+          <option value="invalid">Invalid</option>
+        </select>
+      </label>
+    </div>
+
+    <h3 class="message">{{message}}</h3>
+
+    <button type-="submit" (click)="onSubmit()">Submit</button>
+  </div>
+</div>

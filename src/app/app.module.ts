@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {BackendService} from './backend.service';
-import { NbThemeModule } from '@nebular/theme';
+import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { NbThemeModule } from '@nebular/theme';
   ],
   imports: [
     BrowserModule,
-    NbThemeModule.forRoot(),
+    AppRoutingModule,
+    FlexLayoutModule,
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
